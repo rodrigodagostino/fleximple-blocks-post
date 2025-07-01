@@ -1,17 +1,5 @@
-/**
- * Registers a new block provided a unique name and an object defining its behavior.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
 import { registerBlockType } from '@wordpress/blocks';
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * All files containing `style` keyword are bundled together. The code used
- * gets applied both to the front of your site and to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
+import { InnerBlocks } from '@wordpress/block-editor';
 import './style.scss';
 
 /**
@@ -20,14 +8,31 @@ import './style.scss';
 import Edit from './edit';
 import metadata from './block.json';
 
-/**
- * Every block starts by registering a new block type definition.
- *
- * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-registration/
- */
-registerBlockType( metadata.name, {
-	/**
-	 * @see ./edit.js
-	 */
+const { name } = metadata;
+
+export { metadata, name };
+
+registerBlockType(metadata.name, {
+	icon: {
+		src: (
+			<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+				<path d="M17 11.5l1.146-1.146a.501.501 0 01.854.353V20c0 1.1-.9 2-2 2H6c-1.1 0-2-.9-2-2V5c0-1.1.9-2 2-2h9.293a.501.501 0 01.353.854L14.5 5H6v15h11v-8.5zm-7.2 3.3c-.4.1-.7-.2-.6-.6L10 11l9.3-9.3c.4-.4 1-.4 1.4 0l1.6 1.6c.4.4.4 1 0 1.4L13 14l-3.2.8z" />
+			</svg>
+		),
+	},
 	edit: Edit,
-} );
+	save: () => {
+		return <InnerBlocks.Content />;
+	},
+});
+
+// Provide a custom block class
+function setBlockCustomClassName(className, blockName) {
+	return blockName === name ? 'fleximple-block-post' : className;
+}
+
+wp.hooks.addFilter(
+	'blocks.getBlockDefaultClassName',
+	'fleximple-blocks/fleximple-block-post',
+	setBlockCustomClassName
+);

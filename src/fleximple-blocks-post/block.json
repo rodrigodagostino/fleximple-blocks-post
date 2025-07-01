@@ -1,20 +1,157 @@
 {
 	"$schema": "https://schemas.wp.org/trunk/block.json",
 	"apiVersion": 3,
-	"name": "fleximple-blocks/fleximple-blocks-post",
+	"name": "fleximple-blocks/post",
 	"version": "0.1.0",
-	"title": "Fleximple Blocks Post",
-	"category": "widgets",
-	"icon": "smiley",
-	"description": "Example block scaffolded with Create Block tool.",
-	"example": {},
+	"title": "Post",
+	"category": "fleximple-blocks",
+	"description": "Display a specific post or page.",
+	"attributes": {
+		"blockId": {
+			"type": "string",
+			"default": null
+		},
+		"postId": {
+			"type": "number",
+			"default": null
+		},
+		"postType": {
+			"type": "string",
+			"default": "posts"
+		},
+		"headingLevel": {
+			"type": "number",
+			"default": 3
+		},
+		"excerptLength": {
+			"type": "number",
+			"default": 40
+		},
+		"extraArticles": {
+			"type": "number",
+			"default": 3
+		},
+		"noFollow": {
+			"type": "boolean",
+			"default": false
+		},
+		"noReferrer": {
+			"type": "boolean",
+			"default": false
+		},
+		"imageSize": {
+			"type": "object",
+			"default": {
+				"small": "medium",
+				"medium": "none",
+				"large": "none"
+			}
+		},
+		"aspectRatio": {
+			"type": "object",
+			"default": {
+				"small": "3-2",
+				"medium": "16-10",
+				"large": "none"
+			}
+		},
+		"focalPoint": {
+			"type": "object",
+			"default": {
+				"small": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"medium": {
+					"x": 0.5,
+					"y": 0.5
+				},
+				"large": {
+					"x": 0.5,
+					"y": 0.5
+				}
+			}
+		},
+		"orderArticle": {
+			"type": "array",
+			"default": ["media", "content", "extraArticles"]
+		},
+		"orderMedia": {
+			"type": "array",
+			"default": ["featuredImage", "audio"]
+		},
+		"orderContent": {
+			"type": "array",
+			"default": ["categories", "title", "meta", "excerpt", "readMore"]
+		},
+		"orderMeta": {
+			"type": "array",
+			"default": ["author", "date", "comments"]
+		},
+		"displayMedia": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayFeaturedImage": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayAudio": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayContent": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayCategories": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayTitle": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayMeta": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayAuthor": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayDate": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayComments": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayExcerpt": {
+			"type": "boolean",
+			"default": true
+		},
+		"displayReadMore": {
+			"type": "boolean",
+			"default": false
+		},
+		"displayExtraArticles": {
+			"type": "boolean",
+			"default": false
+		},
+		"readMore": {
+			"type": "string",
+			"default": "Read more"
+		}
+	},
 	"supports": {
+		"align": ["wide", "full"],
 		"html": false
 	},
 	"textdomain": "fleximple-blocks-post",
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"style": "file:./style-index.css",
-	"render": "file:./render.php",
-	"viewScript": "file:./view.js"
+	"render": "file:./render.php"
 }
