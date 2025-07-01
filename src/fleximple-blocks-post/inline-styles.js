@@ -45,7 +45,7 @@ const InlineStyles = ({
 				`@media only screen and (min-width: ${
 					fleximpleblocksPluginData.settings.mediumBreakpointValue
 				}px) {
-          .fleximple-block-post__footer > .block-editor-inner-blocks > .block-editor-block-list__layout {
+          .fleximple-blocks-post__footer > .block-editor-inner-blocks > .block-editor-block-list__layout {
             flex-direction: row;
             justify-content: space-between;
             gap: var(--space-125, 1.25rem);
