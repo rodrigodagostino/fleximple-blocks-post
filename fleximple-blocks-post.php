@@ -6,7 +6,7 @@
  * Version:           1.0.0
  * Requires at least: 6.7
  * Requires PHP:      7.4
- * Author:            The WordPress Contributors
+ * Author:            Rodrigo D’Agostino
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain:       fleximple-blocks-post
@@ -35,6 +35,8 @@ define('FB_POST_PLUGIN_BASE', plugin_basename(__FILE__));
  */
 function fleximple_blocks_post_block_init()
 {
+	load_plugin_textdomain('fleximple-blocks-post', false, dirname(plugin_basename(__FILE__)) . '/languages/');
+
 	/**
 	 * Registers the block(s) metadata from the `blocks-manifest.php` and registers the block type(s)
 	 * based on the registered block metadata.
@@ -67,3 +69,12 @@ function fleximple_blocks_post_block_init()
 	}
 }
 add_action('init', 'fleximple_blocks_post_block_init');
+
+/**
+ * Load the translation files.
+ */
+function fleximple_blocks_post_set_script_translations()
+{
+	wp_set_script_translations('fleximple-blocks-post-editor-script', 'fleximple-blocks-post', plugin_dir_path(__FILE__) . 'languages');
+}
+add_action('init', 'fleximple_blocks_post_set_script_translations');

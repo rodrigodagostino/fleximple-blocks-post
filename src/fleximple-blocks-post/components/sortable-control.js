@@ -17,123 +17,123 @@ export const getHelpText = (attribute, state) => {
 	switch (attribute) {
 		case 'additional':
 			return state === 'hidden'
-				? __('Display additional content', 'fleximpleblocks')
-				: __('Hide additional content', 'fleximpleblocks');
+				? __('Display additional content', 'fleximple-blocks-post')
+				: __('Hide additional content', 'fleximple-blocks-post');
 		case 'audio':
 			return state === 'hidden'
-				? __('Display audio', 'fleximpleblocks')
-				: __('Hide audio', 'fleximpleblocks');
+				? __('Display audio', 'fleximple-blocks-post')
+				: __('Hide audio', 'fleximple-blocks-post');
 		case 'author':
 			return state === 'hidden'
-				? __('Display author', 'fleximpleblocks')
-				: __('Hide author', 'fleximpleblocks');
+				? __('Display author', 'fleximple-blocks-post')
+				: __('Hide author', 'fleximple-blocks-post');
 		case 'categories':
 			return state === 'hidden'
-				? __('Display categories', 'fleximpleblocks')
-				: __('Hide categories', 'fleximpleblocks');
+				? __('Display categories', 'fleximple-blocks-post')
+				: __('Hide categories', 'fleximple-blocks-post');
 		case 'comments':
 			return state === 'hidden'
-				? __('Display comments', 'fleximpleblocks')
-				: __('Hide comments', 'fleximpleblocks');
+				? __('Display comments', 'fleximple-blocks-post')
+				: __('Hide comments', 'fleximple-blocks-post');
 		case 'content':
 			return state === 'hidden'
-				? __('Display content', 'fleximpleblocks')
-				: __('Hide content', 'fleximpleblocks');
+				? __('Display content', 'fleximple-blocks-post')
+				: __('Hide content', 'fleximple-blocks-post');
 		case 'date':
 			return state === 'hidden'
-				? __('Display date', 'fleximpleblocks')
-				: __('Hide date', 'fleximpleblocks');
+				? __('Display date', 'fleximple-blocks-post')
+				: __('Hide date', 'fleximple-blocks-post');
 		case 'excerpt':
 			return state === 'hidden'
-				? __('Display excerpt', 'fleximpleblocks')
-				: __('Hide excerpt', 'fleximpleblocks');
+				? __('Display excerpt', 'fleximple-blocks-post')
+				: __('Hide excerpt', 'fleximple-blocks-post');
 		case 'extraArticles':
 			return state === 'hidden'
-				? __('Display extra articles', 'fleximpleblocks')
-				: __('Hide extra articles', 'fleximpleblocks');
+				? __('Display extra articles', 'fleximple-blocks-post')
+				: __('Hide extra articles', 'fleximple-blocks-post');
 		case 'featuredImage':
 			return state === 'hidden'
-				? __('Display featured image', 'fleximpleblocks')
-				: __('Hide featured image', 'fleximpleblocks');
+				? __('Display featured image', 'fleximple-blocks-post')
+				: __('Hide featured image', 'fleximple-blocks-post');
 		case 'heading':
 			return state === 'hidden'
-				? __('Display heading', 'fleximpleblocks')
-				: __('Hide heading', 'fleximpleblocks');
+				? __('Display heading', 'fleximple-blocks-post')
+				: __('Hide heading', 'fleximple-blocks-post');
 		case 'icon':
 			return state === 'hidden'
-				? __('Display icon', 'fleximpleblocks')
-				: __('Hide icon', 'fleximpleblocks');
+				? __('Display icon', 'fleximple-blocks-post')
+				: __('Hide icon', 'fleximple-blocks-post');
 		case 'media':
 			return state === 'hidden'
-				? __('Display media', 'fleximpleblocks')
-				: __('Hide media', 'fleximpleblocks');
+				? __('Display media', 'fleximple-blocks-post')
+				: __('Hide media', 'fleximple-blocks-post');
 		case 'meta':
 			return state === 'hidden'
-				? __('Display meta', 'fleximpleblocks')
-				: __('Hide meta', 'fleximpleblocks');
+				? __('Display meta', 'fleximple-blocks-post')
+				: __('Hide meta', 'fleximple-blocks-post');
 		case 'quote':
 			return state === 'hidden'
-				? __('Display quote', 'fleximpleblocks')
-				: __('Hide quote', 'fleximpleblocks');
+				? __('Display quote', 'fleximple-blocks-post')
+				: __('Hide quote', 'fleximple-blocks-post');
 		case 'readMore':
 			return state === 'hidden'
-				? __('Display read more', 'fleximpleblocks')
-				: __('Hide read more', 'fleximpleblocks');
+				? __('Display read more', 'fleximple-blocks-post')
+				: __('Hide read more', 'fleximple-blocks-post');
 		case 'reference':
 			return state === 'hidden'
-				? __('Display reference', 'fleximpleblocks')
-				: __('Hide reference', 'fleximpleblocks');
+				? __('Display reference', 'fleximple-blocks-post')
+				: __('Hide reference', 'fleximple-blocks-post');
 		case 'subhead':
 			return state === 'hidden'
-				? __('Display subhead', 'fleximpleblocks')
-				: __('Hide subhead', 'fleximpleblocks');
+				? __('Display subhead', 'fleximple-blocks-post')
+				: __('Hide subhead', 'fleximple-blocks-post');
 		case 'title':
 			return state === 'hidden'
-				? __('Display title', 'fleximpleblocks')
-				: __('Hide title', 'fleximpleblocks');
+				? __('Display title', 'fleximple-blocks-post')
+				: __('Hide title', 'fleximple-blocks-post');
 	}
 };
 
 export const getLabel = (attribute) => {
 	switch (attribute) {
 		case 'additional':
-			return __('Additional content', 'fleximpleblocks');
+			return __('Additional content', 'fleximple-blocks-post');
 		case 'author':
-			return __('Author', 'fleximpleblocks');
+			return __('Author', 'fleximple-blocks-post');
 		case 'audio':
-			return __('Audio', 'fleximpleblocks');
+			return __('Audio', 'fleximple-blocks-post');
 		case 'categories':
-			return __('Categories', 'fleximpleblocks');
+			return __('Categories', 'fleximple-blocks-post');
 		case 'comments':
-			return __('Comments', 'fleximpleblocks');
+			return __('Comments', 'fleximple-blocks-post');
 		case 'content':
-			return __('Content', 'fleximpleblocks');
+			return __('Content', 'fleximple-blocks-post');
 		case 'date':
-			return __('Date', 'fleximpleblocks');
+			return __('Date', 'fleximple-blocks-post');
 		case 'excerpt':
-			return __('Excerpt', 'fleximpleblocks');
+			return __('Excerpt', 'fleximple-blocks-post');
 		case 'extraArticles':
-			return __('Extra articles', 'fleximpleblocks');
+			return __('Extra articles', 'fleximple-blocks-post');
 		case 'featuredImage':
-			return __('Featured image', 'fleximpleblocks');
+			return __('Featured image', 'fleximple-blocks-post');
 		case 'heading':
-			return __('Heading', 'fleximpleblocks');
+			return __('Heading', 'fleximple-blocks-post');
 		case 'icon':
-			return __('Icon', 'fleximpleblocks');
+			return __('Icon', 'fleximple-blocks-post');
 		case 'media':
-			return __('Media', 'fleximpleblocks');
+			return __('Media', 'fleximple-blocks-post');
 		case 'meta':
-			return __('Meta', 'fleximpleblocks');
+			return __('Meta', 'fleximple-blocks-post');
 		case 'quote':
-			return __('Quote', 'fleximpleblocks');
+			return __('Quote', 'fleximple-blocks-post');
 		case 'readMore':
-			return __('Read more', 'fleximpleblocks');
+			return __('Read more', 'fleximple-blocks-post');
 		case 'reference':
-			return __('Reference', 'fleximpleblocks');
+			return __('Reference', 'fleximple-blocks-post');
 		case 'subhead':
-			return __('Subhead', 'fleximpleblocks');
+			return __('Subhead', 'fleximple-blocks-post');
 		case 'title':
-			return __('Title', 'fleximpleblocks');
+			return __('Title', 'fleximple-blocks-post');
 	}
 };
 

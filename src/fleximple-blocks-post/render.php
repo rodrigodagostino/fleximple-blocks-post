@@ -86,7 +86,7 @@ if (isset($attributes['displayCategories']) && $attributes['displayCategories'])
 	$categories_links = '';
 
 	foreach ($categories as $category) {
-		$categories_links .= '<a class="' . $default_class_name . '__category" href="' . esc_url(get_category_link($category->term_id)) . '" rel="category" data-category-slug="' . esc_html($category->slug) . '"><span class="screen-reader-only">' . __('Category:', 'fleximpleblocks') . '</span>' . esc_html($category->name) . '</a></span>';
+		$categories_links .= '<a class="' . $default_class_name . '__category" href="' . esc_url(get_category_link($category->term_id)) . '" rel="category" data-category-slug="' . esc_html($category->slug) . '"><span class="screen-reader-only">' . __('Category:', 'fleximple-blocks-post') . '</span>' . esc_html($category->name) . '</a></span>';
 	}
 
 	$post_categories = sprintf(
@@ -103,7 +103,7 @@ if (isset($attributes['displayTitle']) && $attributes['displayTitle']) {
 	$post_title = get_the_title($post_id);
 	$tag_name = 'h' . $attributes['headingLevel'];
 	if (!$post_title) {
-		$post_title = __('(no title)', 'fleximpleblocks');
+		$post_title = __('(no title)', 'fleximple-blocks-post');
 	}
 
 	$post_title = sprintf(
@@ -129,7 +129,7 @@ if (isset($attributes['displayAuthor']) && $attributes['displayAuthor']) {
 		'<a href="%s" class="%s__byline" rel="author"><span class="screen-reader-only">%s</span>%s</a>',
 		esc_url(get_author_posts_url($post_id)),
 		$default_class_name,
-		__('Published by:', 'fleximpleblocks'),
+		__('Published by:', 'fleximple-blocks-post'),
 		esc_html(get_the_author_meta('display_name', $post->post_author))
 	);
 }
@@ -141,7 +141,7 @@ if (isset($attributes['displayDate']) && $attributes['displayDate']) {
 		'<time datetime="%s" class="%s__date"><span class="screen-reader-only">%s</span>%s</time>',
 		esc_attr(get_the_date('c', $post)),
 		$default_class_name,
-		__('Published on:', 'fleximpleblocks'),
+		__('Published on:', 'fleximple-blocks-post'),
 		esc_html(get_the_date('', $post))
 	);
 }
@@ -150,7 +150,8 @@ if (isset($attributes['displayDate']) && $attributes['displayDate']) {
 $post_comments = '';
 if (!empty($attributes['displayComments'])) {
 	$comments_number = get_comments_number($post);
-	$comments_number = sprintf(_n('%d comment', '%d comments', $comments_number, 'fleximpleblocks'), $comments_number);
+	/* translators: number of comments */
+	$comments_number = sprintf(_n('%d comment', '%d comments', $comments_number, 'fleximple-blocks-post'), $comments_number);
 
 	$post_comments = sprintf(
 		'<span class="%1$s__comments">%2$s</span>',

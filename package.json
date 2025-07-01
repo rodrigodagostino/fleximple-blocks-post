@@ -12,7 +12,12 @@
 		"lint:js": "wp-scripts lint-js",
 		"packages-update": "wp-scripts packages-update",
 		"plugin-zip": "wp-scripts plugin-zip",
-		"start": "wp-scripts start --webpack-copy-php --blocks-manifest"
+		"start": "wp-scripts start --webpack-copy-php --blocks-manifest",
+		"makepot": "wp i18n make-pot . languages/fleximple-blocks-post.pot",
+		"makepo": "cp languages/fleximple-blocks-post.pot languages/fleximple-blocks-post-es_ES.po",
+		"updatepo": "wp i18n update-po languages/fleximple-blocks-post-es_ES.po",
+		"makemo": "wp i18n make-mo languages/fleximple-blocks-post-es_ES.po",
+		"makejson": "wp i18n make-json languages/fleximple-blocks-post-es_ES.po --no-purge"
 	},
 	"devDependencies": {
 		"@wordpress/scripts": "30.19.0",

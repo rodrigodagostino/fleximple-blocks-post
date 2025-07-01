@@ -75,7 +75,7 @@ function PostSelectControl(
 	return (
 		<>
 			<BaseControl
-				label={__('Post', 'fleximpleblocks')}
+				label={__('Post', 'fleximple-blocks-post')}
 				className="fleximple-components-select-control"
 				hideLabelFromVision={hideLabelFromVision}
 				id={id}
@@ -87,14 +87,14 @@ function PostSelectControl(
 					// cacheOptions
 					defaultOptions={defaultOptions}
 					loadOptions={fetchPromiseOptions}
-					placeholder={__('Search a post…', 'fleximpleblocks')}
+					placeholder={__('Search a post…', 'fleximple-blocks-post')}
 					onChange={(selectedOption) => setAttributes({ postId: selectedOption.value })}
-					loadingMessage={() => __('Loading…', 'fleximpleblocks')}
-					noOptionsMessage={() => __('No posts found.', 'fleximpleblocks')}
+					loadingMessage={() => __('Loading…', 'fleximple-blocks-post')}
+					noOptionsMessage={() => __('No posts found.', 'fleximple-blocks-post')}
 				/>
 			</BaseControl>
 			<SelectControl
-				label={__('Post type', 'fleximpleblocks')}
+				label={__('Post type', 'fleximple-blocks-post')}
 				labelPosition="top"
 				value={postType}
 				options={postTypes}

@@ -169,7 +169,7 @@ export default function PostPreview({
 															dangerouslySetInnerHTML={{
 																__html: `<span class="screen-reader-only">${__(
 																	'Category:',
-																	'fleximpleblocks'
+																	'fleximple-blocks-post'
 																)}</span> ${category.name}`,
 															}}
 														/>
@@ -216,7 +216,7 @@ export default function PostPreview({
 																dangerouslySetInnerHTML={{
 																	__html: `<span class="screen-reader-only">${__(
 																		'Published by:',
-																		'fleximpleblocks'
+																		'fleximple-blocks-post'
 																	)}</span> ${post.author_data.name}`,
 																}}
 															/>
@@ -232,7 +232,7 @@ export default function PostPreview({
 																dangerouslySetInnerHTML={{
 																	__html: `<span class="screen-reader-only">${__(
 																		'Published on:',
-																		'fleximpleblocks'
+																		'fleximple-blocks-post'
 																	)}</span> ${dateI18n(dateFormat, post.date_gmt)}`,
 																}}
 															/>
@@ -291,7 +291,7 @@ export default function PostPreview({
 								aria-hidden="true"
 								/* translators: edit post link text */
 								dangerouslySetInnerHTML={{
-									__html: `${__('Edit', 'fleximpleblocks')} «${post.title.rendered}»`,
+									__html: `${__('Edit', 'fleximple-blocks-post')} «${post.title.rendered}»`,
 								}}
 							/>
 						</>

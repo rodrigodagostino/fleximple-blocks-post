@@ -133,10 +133,10 @@ export default function PostEdit({
 
 	const inspectorControls = (
 		<InspectorControls>
-			<PanelBody title={__('Main', 'fleximpleblocks')}>
+			<PanelBody title={__('Main', 'fleximple-blocks-post')}>
 				<PostSelectControl {...{ attributes, setAttributes }} instanceId={instanceId} />
 				<BaseControl
-					label={__('Heading level', 'fleximpleblocks')}
+					label={__('Heading level', 'fleximple-blocks-post')}
 					id={`fleximple-blocks-post-heading-control-${instanceId}`}
 				>
 					<HeadingLevelToolbar
@@ -150,7 +150,7 @@ export default function PostEdit({
 				</BaseControl>
 				{displayExcerpt && (
 					<RangeControl
-						label={__('Max number of words in excerpt', 'fleximpleblocks')}
+						label={__('Max number of words in excerpt', 'fleximple-blocks-post')}
 						min={10}
 						max={100}
 						value={excerptLength}
@@ -158,13 +158,13 @@ export default function PostEdit({
 					/>
 				)}
 				<ToggleControl
-					label={__('Display extra articles', 'fleximpleblocks')}
+					label={__('Display extra articles', 'fleximple-blocks-post')}
 					checked={!!displayExtraArticles}
 					onChange={() => setAttributes({ displayExtraArticles: !displayExtraArticles })}
 				/>
 				{displayExtraArticles && (
 					<RangeControl
-						label={__('Extra articles', 'fleximpleblocks')}
+						label={__('Extra articles', 'fleximple-blocks-post')}
 						min={1}
 						max={6}
 						value={extraArticles}
@@ -173,46 +173,49 @@ export default function PostEdit({
 					/>
 				)}
 				<ToggleControl
-					label={__('“nofollow” attribute', 'fleximpleblocks')}
+					label={__('“nofollow” attribute', 'fleximple-blocks-post')}
 					checked={!!noFollow}
 					onChange={() => setAttributes({ noFollow: !noFollow })}
 					help={
 						!noFollow
-							? __('Google search spider should follow the links to this post.', 'fleximpleblocks')
+							? __(
+									'Google search spider should follow the links to this post.',
+									'fleximple-blocks-post'
+							  )
 							: __(
 									'Google search spider should not follow the links to this post.',
-									'fleximpleblocks'
+									'fleximple-blocks-post'
 							  )
 					}
 				/>
 				<ToggleControl
-					label={__('“noreferrer” attribute', 'fleximpleblocks')}
+					label={__('“noreferrer” attribute', 'fleximple-blocks-post')}
 					checked={!!noReferrer}
 					onChange={() => setAttributes({ noReferrer: !noReferrer })}
 					help={
 						!noReferrer
 							? __(
 									'The browser should send an HTTP referer header if the user follows the hyperlink.',
-									'fleximpleblocks'
+									'fleximple-blocks-post'
 							  )
 							: __(
 									'The browser should not send an HTTP referer header if the user follows the hyperlink.',
-									'fleximpleblocks'
+									'fleximple-blocks-post'
 							  )
 					}
 				/>
 			</PanelBody>
 			{displayMedia && displayFeaturedImage && !!post?.featured_media && (
-				<PanelBody title={__('Media', 'fleximpleblocks')} initialOpen={false}>
-					<ResponsiveSettingsTabPanel initialTabName="medium">
+				<PanelBody title={__('Media', 'fleximple-blocks-post')} initialOpen={false}>
+					<ResponsiveSettingsTabPanel initialTabName="small">
 						{(tab) => (
 							<>
 								<SelectControl
-									label={__('Image size', 'fleximpleblocks')}
+									label={__('Image size', 'fleximple-blocks-post')}
 									value={imageSize[tab.name]}
 									options={[
 										{
-											label: __('None', 'fleximpleblocks'),
+											label: __('None', 'fleximple-blocks-post'),
 											value: 'none',
 										},
 										...getImageSizes(media),
@@ -222,7 +225,7 @@ export default function PostEdit({
 									}}
 								/>
 								<SelectControl
-									label={__('Aspect ratio', 'fleximpleblocks')}
+									label={__('Aspect ratio', 'fleximple-blocks-post')}
 									value={aspectRatio[tab.name]}
 									options={[
 										{ label: 'None', value: 'none' },
@@ -267,11 +270,11 @@ export default function PostEdit({
 					</ResponsiveSettingsTabPanel>
 				</PanelBody>
 			)}
-			<PanelBody title={__('Display', 'fleximpleblocks')} initialOpen={false}>
+			<PanelBody title={__('Display', 'fleximple-blocks-post')} initialOpen={false}>
 				<PostSortableControl {...{ attributes, setAttributes }} />
 				{!!displayReadMore && (
 					<TextControl
-						label={__('Read more text', 'fleximpleblocks')}
+						label={__('Read more text', 'fleximple-blocks-post')}
 						value={readMore}
 						onChange={(value) => setAttributes({ readMore: value })}
 					/>
@@ -288,7 +291,7 @@ export default function PostEdit({
 				<div {...blockProps}>
 					<Placeholder className="fleximple-components-placeholder">
 						<Spinner />
-						<p>{__('Loading…', 'fleximpleblocks')}</p>
+						<p>{__('Loading…', 'fleximple-blocks-post')}</p>
 					</Placeholder>
 				</div>
 			</>
