@@ -25,6 +25,7 @@ import HeadingLevelToolbar from 'fleximple-components/components/heading-level-t
 import ResponsiveSettingsTabPanel from 'fleximple-components/components/responsive-settings-tab-panel';
 import Spinner from 'fleximple-components/components/spinner';
 import { setResponsiveAttribute } from '../utils';
+import './editor.scss';
 
 function getImageSizes(media) {
 	if (!media) return;
