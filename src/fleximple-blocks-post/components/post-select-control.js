@@ -3,23 +3,26 @@ import AsyncSelect from 'react-select/async';
 import { __ } from '@wordpress/i18n';
 import apiFetch from '@wordpress/api-fetch';
 import { BaseControl, SelectControl } from '@wordpress/components';
-import { useEffect, useState } from '@wordpress/element';
+import { store as coreStore } from '@wordpress/core-data';
+import { useSelect } from '@wordpress/data';
 import { addQueryArgs } from '@wordpress/url';
 
 function parsePostTypes(types) {
+	if (!types) return [];
+
 	const typesObjectToArray = Object.keys(types).map((type) => {
 		return types[type];
 	});
 	return typesObjectToArray.map((type) => {
 		const typeObject = {};
-		typeObject.label = type.name;
-		typeObject.value = type.rest_base;
+		typeObject.label = type.labels.singular_name;
+		typeObject.value = type.slug;
 		return typeObject;
 	});
 }
 
 function parseSearchResults(results) {
-	if (results.length === 0) return [];
+	if (!results?.length) return [];
 
 	return results.map((result) => ({
 		label: result.title.rendered,
@@ -31,40 +34,24 @@ function PostSelectControl(
 	{ attributes: { postType }, setAttributes, hideLabelFromVision, help },
 	instanceId
 ) {
-	const [postTypes, setPostTypes] = useState(null);
-	const [defaultOptions, setDefaultOptions] = useState([]);
-
-	useEffect(() => {
-		fetchPostTypes();
-		fetchDefaultOptions();
+	const postTypes = useSelect((select) => {
+		return select(coreStore).getPostTypes({ per_page: 4 });
 	}, []);
 
-	useEffect(() => {
-		fetchDefaultOptions();
-	}, [postType]);
-
-	const fetchPostTypes = () => {
-		apiFetch({ path: '/wp/v2/types/' })
-			.then((types) => {
-				setPostTypes(parsePostTypes(types));
-			})
-			.catch((error) => console.error(error));
-	};
-
-	const fetchDefaultOptions = async () => {
-		const searchResults = await apiFetch({
-			path: addQueryArgs(`/wp/v2/${postType}`, {
-				per_page: 20,
-			}),
-		});
-		setDefaultOptions(parseSearchResults(searchResults));
-	};
+	const defaultOptions = useSelect((select) => {
+		if (!postType) return [];
+		const { getEntityRecords } = select(coreStore);
+		const query = { per_page: 20 };
+		return parseSearchResults(getEntityRecords('postType', postType, query));
+	}, []);
 
 	const fetchPromiseOptions = async (inputValue) => {
+		const postTypeRestBase = postTypes.find((type) => type.slug === postType).rest_base;
 		const searchResults = await apiFetch({
-			path: addQueryArgs(`/wp/v2/${postType}`, {
+			path: addQueryArgs(`/wp/v2/${postTypeRestBase}`, {
 				search: inputValue,
 				per_page: 20,
+				_fields: 'id,title',
 			}),
 		});
 		return parseSearchResults(searchResults);
@@ -84,7 +71,7 @@ function PostSelectControl(
 				<AsyncSelect
 					className="react-select-container"
 					classNamePrefix="react-select"
-					// cacheOptions
+					cacheOptions
 					defaultOptions={defaultOptions}
 					loadOptions={fetchPromiseOptions}
 					placeholder={__('Search a post…', 'fleximple-blocks-post')}
@@ -97,7 +84,7 @@ function PostSelectControl(
 				label={__('Post type', 'fleximple-blocks-post')}
 				labelPosition="top"
 				value={postType}
-				options={postTypes}
+				options={parsePostTypes(postTypes)}
 				onChange={(value) => setAttributes({ postType: value })}
 			/>
 		</>

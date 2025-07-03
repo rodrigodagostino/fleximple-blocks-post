@@ -64,9 +64,9 @@ export default function PostPreview({
 
 	const defaultClassName = getBlockDefaultClassName(name);
 
-	const smallMedia = media.media_details.sizes[imageSize?.small];
-	const mediumMedia = media.media_details.sizes[imageSize?.medium];
-	const largeMedia = media.media_details.sizes[imageSize?.large];
+	const smallMedia = media?.media_details.sizes[imageSize?.small];
+	const mediumMedia = media?.media_details.sizes[imageSize?.medium];
+	const largeMedia = media?.media_details.sizes[imageSize?.large];
 	const featMedia = media
 		? {
 				small: smallMedia ? { ...smallMedia } : null,
@@ -181,7 +181,7 @@ export default function PostPreview({
 									if (contentFragment === 'title' && displayTitle && !!post.title.rendered) {
 										return (
 											<TagName key={index} className={`${defaultClassName}__title`}>
-												{!!post.meta.kicker && (
+												{!!post.meta?.kicker && (
 													<span
 														className={`${defaultClassName}__kicker`}
 														dangerouslySetInnerHTML={{

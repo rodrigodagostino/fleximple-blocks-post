@@ -1,5 +1,4 @@
 import { __ } from '@wordpress/i18n';
-import apiFetch from '@wordpress/api-fetch';
 import { BlockControls, InspectorControls, useBlockProps } from '@wordpress/block-editor';
 import {
 	BaseControl,
@@ -14,8 +13,7 @@ import {
 import { useInstanceId } from '@wordpress/compose';
 import { store as coreStore } from '@wordpress/core-data';
 import { useSelect } from '@wordpress/data';
-import { useEffect, useMemo, useState } from '@wordpress/element';
-import { addQueryArgs } from '@wordpress/url';
+import { useEffect } from '@wordpress/element';
 
 import PostPreview from './components/post-preview';
 import PostSelectControl from './components/post-select-control';
@@ -64,57 +62,40 @@ export default function PostEdit({
 }) {
 	const instanceId = useInstanceId(PostEdit);
 
-	const [post, setPost] = useState(null);
-	const [isFetching, setIsFetching] = useState(false);
-
-	const { media } = useSelect(
-		(select) => {
-			const { getMedia } = select(coreStore);
-
-			return {
-				media:
-					post?.featured_media &&
-					getMedia(post.featured_media, {
-						context: 'view',
-					}),
-			};
-		},
-		[post]
-	);
-
 	useEffect(() => {
 		if (!attributes.className) {
 			setAttributes({ className: 'is-style-standard' });
 		}
-
-		fetchPost();
 	}, []);
 
 	useEffect(() => {
 		setAttributes({ blockId: clientId });
 	}, [clientId]);
 
-	const fetchPost = () => {
-		if (!postType) return;
+	const post = useSelect(
+		(select) => {
+			if (!postType) return;
+			return select(coreStore).getEntityRecord('postType', postType, postId);
+		},
+		[postId]
+	);
 
-		setIsFetching(true);
-		// Fetch the last post if postId is not set.
-		apiFetch({
-			path: postId ? `/wp/v2/${postType}/${postId}` : addQueryArgs('/wp/v2/posts', { per_page: 1 }),
-		})
-			.then((result) => {
-				const post = postId ? result : result[0];
-				setAttributes({ postId: post.id });
-				setPost(post);
-				if (!result.audio_data) {
-					setAttributes({ displayAudio: false });
-				}
-			})
-			.catch((error) => console.error(error))
-			.finally(() => setIsFetching(false));
-	};
+	const { media } = useSelect(
+		(select) => {
+			if (!post || !post.featured_media || !displayFeaturedImage) {
+				return { media: null };
+			}
 
-	useMemo(() => fetchPost(), [postId]);
+			const { getMedia } = select(coreStore);
+
+			return {
+				media: getMedia(post.featured_media, {
+					context: 'view',
+				}),
+			};
+		},
+		[post?.featured_media, displayFeaturedImage]
+	);
 
 	const blockProps = useBlockProps({
 		'data-post-id': postId ? postId : null,
@@ -284,26 +265,18 @@ export default function PostEdit({
 		</InspectorControls>
 	);
 
-	if (isFetching || !post || !media) {
-		return (
-			<>
-				{blockControls}
-				{inspectorControls}
-				<div {...blockProps}>
-					<Placeholder className="fleximple-components-placeholder">
-						<Spinner />
-						<p>{__('Loading…', 'fleximple-blocks-post')}</p>
-					</Placeholder>
-				</div>
-			</>
-		);
-	}
-
 	return (
 		<>
 			{blockControls}
 			{inspectorControls}
-			<PostPreview post={post} media={media} blockProps={blockProps} {...{ attributes }} />
+			{!post ? (
+				<Placeholder className="fleximple-components-placeholder">
+					<Spinner size="medium" />
+					<p style={{ marginInline: 'auto' }}>{__('Loading…', 'fleximple-blocks-post')}</p>
+				</Placeholder>
+			) : (
+				<PostPreview post={post} media={media} blockProps={blockProps} {...{ attributes }} />
+			)}
 		</>
 	);
 }

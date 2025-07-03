@@ -17,7 +17,7 @@
 		},
 		"postType": {
 			"type": "string",
-			"default": "posts"
+			"default": "post"
 		},
 		"headingLevel": {
 			"type": "number",
