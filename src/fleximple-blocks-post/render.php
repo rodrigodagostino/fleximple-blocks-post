@@ -70,9 +70,9 @@ if (isset($attributes['displayAudio']) && $attributes['displayAudio']) {
 				break;
 			} // Display only the first audio item
 			$post_audio = sprintf(
-				'<audio controls src="%s" class="%s__audio"></audio>',
+				'<audio class="%s__audio" src="%s" controls preload="none"></audio>',
+				$default_class_name,
 				$audio->guid,
-				$default_class_name
 			);
 			$i++;
 		}

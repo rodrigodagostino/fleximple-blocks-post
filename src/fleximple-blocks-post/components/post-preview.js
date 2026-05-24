@@ -72,7 +72,7 @@ export default function PostPreview({
 				small: smallMedia ? { ...smallMedia } : null,
 				medium: mediumMedia ? { ...mediumMedia } : null,
 				large: largeMedia ? { ...largeMedia } : null,
-		  }
+			}
 		: null;
 
 	const pictureSources = [];
@@ -90,7 +90,7 @@ export default function PostPreview({
 								key !== 'small'
 									? `(min-width: ${
 											fleximpleblocksPluginData.settings[array[index + 1][0] + 'BreakpointValue']
-									  }px)`
+										}px)`
 									: null
 							}
 							srcSet={featMedia?.[key]?.source_url}
@@ -136,9 +136,10 @@ export default function PostPreview({
 										// eslint-disable-next-line jsx-a11y/media-has-caption
 										<audio
 											key={i}
-											controls
-											src={post.audio_data[0].url}
 											className={`${defaultClassName}__audio`}
+											src={post.audio_data[0].url}
+											controls
+											preload="none"
 										/>
 									);
 								}
