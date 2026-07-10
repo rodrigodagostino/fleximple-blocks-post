@@ -50,6 +50,7 @@ export default function PostEdit({
 		imageSize,
 		aspectRatio,
 		focalPoint,
+		imageFetchPriority,
 		displayMedia,
 		displayFeaturedImage,
 		displayExcerpt,
@@ -163,11 +164,11 @@ export default function PostEdit({
 							? __(
 									'Google search spider should follow the links to this post.',
 									'fleximple-blocks-post'
-							  )
+								)
 							: __(
 									'Google search spider should not follow the links to this post.',
 									'fleximple-blocks-post'
-							  )
+								)
 					}
 				/>
 				<ToggleControl
@@ -179,11 +180,11 @@ export default function PostEdit({
 							? __(
 									'The browser should send an HTTP referer header if the user follows the hyperlink.',
 									'fleximple-blocks-post'
-							  )
+								)
 							: __(
 									'The browser should not send an HTTP referer header if the user follows the hyperlink.',
 									'fleximple-blocks-post'
-							  )
+								)
 					}
 				/>
 			</PanelBody>
@@ -250,6 +251,17 @@ export default function PostEdit({
 							</>
 						)}
 					</ResponsiveSettingsTabPanel>
+					<SelectControl
+						label={__('Fetch priority', 'fleximple-blocks-post')}
+						labelPosition="top"
+						value={imageFetchPriority}
+						options={[
+							{ label: __('Auto', 'fleximple-blocks-post'), value: 'auto' },
+							{ label: __('High', 'fleximple-blocks-post'), value: 'high' },
+							{ label: __('Low', 'fleximple-blocks-post'), value: 'low' },
+						]}
+						onChange={(value) => setAttributes({ imageFetchPriority: value })}
+					/>
 				</PanelBody>
 			)}
 			<PanelBody title={__('Display', 'fleximple-blocks-post')} initialOpen={false}>

@@ -21,6 +21,7 @@ $post_featured_image = '';
 if (isset($attributes['displayFeaturedImage']) && $attributes['displayFeaturedImage']) {
 	$image_size = $attributes['imageSize'];
 	$featured_image = wp_get_attachment_image_src(get_post_thumbnail_id($post), 'full', false);
+	$image_fetch_priority = $attributes['imageFetchPriority'];
 
 	$picture_classes = $default_class_name . '__picture';
 
@@ -48,13 +49,14 @@ if (isset($attributes['displayFeaturedImage']) && $attributes['displayFeaturedIm
 	$post_featured_image = sprintf(
 		'<picture class="%s">
         %s
-        <img class="%s__image" src="%s" alt="%s"/>
+        <img class="%s__image" src="%s" alt="%s" fetchpriority="%s" />
       </picture>',
 		$picture_classes,
 		implode('', $picture_sources),
 		$default_class_name,
 		$image_source,
-		esc_attr(get_the_title($post))
+		esc_attr(get_the_title($post)),
+		$image_fetch_priority
 	);
 }
 

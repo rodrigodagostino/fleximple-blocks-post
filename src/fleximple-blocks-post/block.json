@@ -72,6 +72,10 @@
 				}
 			}
 		},
+		"imageFetchPriority": {
+			"type": "string",
+			"default": "auto"
+		},
 		"orderArticle": {
 			"type": "array",
 			"default": ["media", "content", "extraArticles"]
