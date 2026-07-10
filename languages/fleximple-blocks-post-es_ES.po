@@ -1,17 +1,18 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Fleximple Blocks: Post 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fleximple-blocks-post\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fleximple-blocks-"
+"post\n"
+"POT-Creation-Date: 2026-07-10T20:05:30+00:00\n"
+"PO-Revision-Date: 2026-07-10 17:05-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: es_ES\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-07-01T19:46:06-03:00\n"
-"PO-Revision-Date: 2025-07-01 20:06-0300\n"
-"Language: es_ES\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 3.6\n"
+"X-Generator: Poedit 3.9\n"
 "X-Domain: fleximple-blocks-post\n"
 
 #. Plugin Name of the plugin
@@ -29,69 +30,71 @@ msgstr "Muestra una entrada o página específica."
 msgid "Rodrigo D’Agostino"
 msgstr ""
 
-#: build/fleximple-blocks-post/render.php:89
-#: src/fleximple-blocks-post/render.php:89
-#: build/fleximple-blocks-post/index.js:1
-#: src/fleximple-blocks-post/components/post-preview.js:170
+#: build/fleximple-blocks-post/render.php:91
+#: src/fleximple-blocks-post/render.php:91
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/post-preview.js:179
 msgid "Category:"
 msgstr "Categoría:"
 
-#: build/fleximple-blocks-post/render.php:106
-#: src/fleximple-blocks-post/render.php:106
+#: build/fleximple-blocks-post/render.php:108
+#: src/fleximple-blocks-post/render.php:108
 msgid "(no title)"
 msgstr "(sin título)"
 
-#: build/fleximple-blocks-post/render.php:132
-#: src/fleximple-blocks-post/render.php:132
-#: build/fleximple-blocks-post/index.js:1
-#: src/fleximple-blocks-post/components/post-preview.js:217
+#: build/fleximple-blocks-post/render.php:131
+#: src/fleximple-blocks-post/render.php:131
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/post-preview.js:226
 msgid "Published by:"
 msgstr "Publicado por:"
 
-#: build/fleximple-blocks-post/render.php:144
-#: src/fleximple-blocks-post/render.php:144
-#: build/fleximple-blocks-post/index.js:1
-#: src/fleximple-blocks-post/components/post-preview.js:233
+#: build/fleximple-blocks-post/render.php:143
+#: src/fleximple-blocks-post/render.php:143
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/post-preview.js:242
 msgid "Published on:"
 msgstr "Publicado en:"
 
 #. translators: number of comments
-#: build/fleximple-blocks-post/render.php:154
-#: src/fleximple-blocks-post/render.php:154
+#: build/fleximple-blocks-post/render.php:153
+#: src/fleximple-blocks-post/render.php:153
+#, php-format
 msgid "%d comment"
 msgid_plural "%d comments"
 msgstr[0] "%d comentario"
 msgstr[1] "%d comentarios"
 
+#. translators: edit post link text
 #: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/post-preview.js:294
+#: src/fleximple-blocks-post/components/post-preview.js:120
 msgid "Edit"
 msgstr "Editar"
 
 #: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/post-select-control.js:78
+#: src/fleximple-blocks-post/components/post-select-control.js:65
 msgid "Post"
 msgstr "Entrada"
 
 #: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/post-select-control.js:90
+#: src/fleximple-blocks-post/components/post-select-control.js:77
 msgid "Search a post…"
 msgstr "Busca una entrada…"
 
 #: build/fleximple-blocks-post/index.js:2
 #: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/components/post-select-control.js:92
+#: src/fleximple-blocks-post/components/post-select-control.js:79
 #: src/fleximple-blocks-post/edit.js:294
 msgid "Loading…"
 msgstr "Cargando…"
 
 #: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/post-select-control.js:93
+#: src/fleximple-blocks-post/components/post-select-control.js:80
 msgid "No posts found."
 msgstr "No se encontraron entradas."
 
 #: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/post-select-control.js:97
+#: src/fleximple-blocks-post/components/post-select-control.js:84
 msgid "Post type"
 msgstr "Tipo de entrada"
 
@@ -178,7 +181,7 @@ msgstr "Ocultar extracto"
 #: build/fleximple-blocks-post/index.js:2
 #: build/fleximple-blocks-post/index.js:7
 #: src/fleximple-blocks-post/components/sortable-control.js:52
-#: src/fleximple-blocks-post/edit.js:161
+#: src/fleximple-blocks-post/edit.js:151
 msgid "Display extra articles"
 msgstr "Mostrar artículos extra"
 
@@ -330,7 +333,7 @@ msgstr "Extracto"
 #: build/fleximple-blocks-post/index.js:2
 #: build/fleximple-blocks-post/index.js:7
 #: src/fleximple-blocks-post/components/sortable-control.js:116
-#: src/fleximple-blocks-post/edit.js:167
+#: src/fleximple-blocks-post/edit.js:157
 msgid "Extra articles"
 msgstr "Artículos extra"
 
@@ -352,7 +355,7 @@ msgstr "Ícono"
 #: build/fleximple-blocks-post/index.js:2
 #: build/fleximple-blocks-post/index.js:7
 #: src/fleximple-blocks-post/components/sortable-control.js:124
-#: src/fleximple-blocks-post/edit.js:209
+#: src/fleximple-blocks-post/edit.js:199
 msgid "Media"
 msgstr "Multimedia"
 
@@ -387,84 +390,95 @@ msgid "Title"
 msgstr "Título"
 
 #. translators: %s: heading level e.g: "1", "2", "3"
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/edit.js:136
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:124
 msgid "Main"
 msgstr "Principal"
 
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/edit.js:139
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:129
 msgid "Heading level"
 msgstr "Nivel de encabezado"
 
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/edit.js:153
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:143
 msgid "Max number of words in excerpt"
 msgstr "Número máximo de palabras en el extracto"
 
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/edit.js:176
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:166
 msgid "“nofollow” attribute"
 msgstr "Atributo “nofollow”"
 
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/edit.js:185
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:175
 msgid "Google search spider should not follow the links to this post."
-msgstr "La araña de búsqueda de Google no debe seguir los enlaces a estas publicaciones."
+msgstr ""
+"La araña de búsqueda de Google no debe seguir los enlaces a estas "
+"publicaciones."
 
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/edit.js:181
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:171
 msgid "Google search spider should follow the links to this post."
-msgstr "La araña de búsqueda de Google debe seguir los enlaces a estas publicaciones."
+msgstr ""
+"La araña de búsqueda de Google debe seguir los enlaces a estas publicaciones."
 
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/edit.js:192
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:182
 msgid "“noreferrer” attribute"
 msgstr "Atributo “noreferrer”"
 
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/edit.js:201
-msgid "The browser should not send an HTTP referer header if the user follows the hyperlink."
-msgstr "El navegador no debe enviar un encabezado de referencia HTTP si el usuario sigue el hipervínculo."
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:191
+msgid ""
+"The browser should not send an HTTP referer header if the user follows the "
+"hyperlink."
+msgstr ""
+"El navegador no debe enviar un encabezado de referencia HTTP si el usuario "
+"sigue el hipervínculo."
 
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/edit.js:197
-msgid "The browser should send an HTTP referer header if the user follows the hyperlink."
-msgstr "El navegador debe enviar un encabezado de referencia HTTP si el usuario sigue el hipervínculo."
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:187
+msgid ""
+"The browser should send an HTTP referer header if the user follows the "
+"hyperlink."
+msgstr ""
+"El navegador debe enviar un encabezado de referencia HTTP si el usuario "
+"sigue el hipervínculo."
 
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/edit.js:214
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:204
 msgid "Image size"
 msgstr "Tamaño de imagen"
 
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/edit.js:218
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:208
 msgid "None"
 msgstr "Ninguno"
 
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/edit.js:228
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:218
 msgid "Aspect ratio"
 msgstr "Proporciones"
 
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/edit.js:273
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:262
+msgid "Fetch priority"
+msgstr "Prioridad de obtención"
+
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:266
+msgid "Auto"
+msgstr "Automática"
+
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:267
+msgid "High"
+msgstr "Alta"
+
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:268
+msgid "Low"
+msgstr "Baja"
+
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:274
 msgid "Display"
 msgstr "Mostrar"
 
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/edit.js:277
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:278
 msgid "Read more text"
 msgstr "Texto leer más"
 
-#: build/fleximple-blocks-post/block.json
-#: src/fleximple-blocks-post/block.json
+#: build/fleximple-blocks-post/block.json src/fleximple-blocks-post/block.json
 msgctxt "block title"
 msgid "Post"
 msgstr "Entrada"
 
-#: build/fleximple-blocks-post/block.json
-#: src/fleximple-blocks-post/block.json
+#: build/fleximple-blocks-post/block.json src/fleximple-blocks-post/block.json
 msgctxt "block description"
 msgid "Display a specific post or page."
 msgstr "Muestra una entrada o página específica."
