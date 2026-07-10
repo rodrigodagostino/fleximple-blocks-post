@@ -110,6 +110,15 @@ export default function PostPreview({
 
 	return (
 		<article {...blockProps}>
+			<a
+				className={`${defaultClassName}__link-overlay`}
+				href={`${fleximpleblocksPluginData.homeUrl}/wp-admin/post.php?post=${post.id}&action=edit`}
+				target="_blank"
+				rel="noopener noreferrer"
+				data-link-name="article"
+				/* translators: edit post link text */
+				aria-label={`${__('Edit', 'fleximple-blocks-post')} «${post.title.rendered}»`}
+			/>
 			{orderArticle.map((articleFragment, index) => {
 				if (
 					articleFragment === 'media' &&
@@ -133,7 +142,6 @@ export default function PostPreview({
 								}
 								if (mediaFragment === 'audio' && displayAudio && post.audio_data.length > 0) {
 									return (
-										// eslint-disable-next-line jsx-a11y/media-has-caption
 										<audio
 											key={i}
 											className={`${defaultClassName}__audio`}
@@ -151,14 +159,14 @@ export default function PostPreview({
 					return (
 						<>
 							<div className={`${defaultClassName}__content`}>
-								{orderContent.map((contentFragment, index) => {
+								{orderContent.map((contentFragment, j) => {
 									if (
 										contentFragment === 'categories' &&
 										displayCategories &&
 										!!post.categories_data
 									) {
 										return (
-											<div key={index} className={`${defaultClassName}__categories`}>
+											<div key={j} className={`${defaultClassName}__categories`}>
 												{post.categories_data.map((category, i) => {
 													return (
 														<a
@@ -181,7 +189,7 @@ export default function PostPreview({
 									}
 									if (contentFragment === 'title' && displayTitle && !!post.title.rendered) {
 										return (
-											<TagName key={index} className={`${defaultClassName}__title`}>
+											<TagName key={j} className={`${defaultClassName}__title`}>
 												{!!post.meta?.kicker && (
 													<span
 														className={`${defaultClassName}__kicker`}
@@ -205,12 +213,12 @@ export default function PostPreview({
 										(!!post.author_data || !!post.date_gmt || !!post.comments_number)
 									) {
 										return (
-											<div key={index} className={`${defaultClassName}__meta`}>
-												{orderMeta.map((metaFragment, i) => {
+											<div key={j} className={`${defaultClassName}__meta`}>
+												{orderMeta.map((metaFragment, x) => {
 													if (metaFragment === 'author' && displayAuthor && !!post.author_data) {
 														return (
 															<a
-																key={i}
+																key={x}
 																href={post.author_data.url}
 																className={`${defaultClassName}__byline`}
 																rel="author"
@@ -227,7 +235,7 @@ export default function PostPreview({
 													if (metaFragment === 'date' && displayDate) {
 														return (
 															<time
-																key={i}
+																key={x}
 																dateTime={format('c', post.date_gmt)}
 																className={`${defaultClassName}__date`}
 																dangerouslySetInnerHTML={{
@@ -246,7 +254,7 @@ export default function PostPreview({
 														!!post.comments_number
 													) {
 														return (
-															<span key={i} className={`${defaultClassName}__comments`}>
+															<span key={x} className={`${defaultClassName}__comments`}>
 																{post.comments_number}
 															</span>
 														);
@@ -257,7 +265,7 @@ export default function PostPreview({
 									}
 									if (contentFragment === 'excerpt' && displayExcerpt && !!post.excerpt) {
 										return (
-											<RawHTML key={index} className={`${defaultClassName}__excerpt`}>
+											<RawHTML key={j} className={`${defaultClassName}__excerpt`}>
 												{excerptLength < post.excerpt.rendered.trim().split(' ').length
 													? post.excerpt.rendered.trim().split(' ', excerptLength).join(' ') + '…'
 													: post.excerpt.rendered.trim().split(' ', excerptLength).join(' ')}
@@ -268,7 +276,7 @@ export default function PostPreview({
 										return (
 											// eslint-disable-next-line react/jsx-no-target-blank
 											<a
-												key={index}
+												key={j}
 												href={post.link}
 												className={`${defaultClassName}__read-more`}
 												target="_blank"
@@ -281,20 +289,6 @@ export default function PostPreview({
 									}
 								})}
 							</div>
-							{/* eslint-disable-next-line react/jsx-no-target-blank */}
-							<a
-								href={`${fleximpleblocksPluginData.homeUrl}/wp-admin/post.php?post=${post.id}&action=edit`}
-								className={`${defaultClassName}__link-overlay`}
-								target="_blank"
-								rel={relAttribute ? relAttribute : null}
-								data-link-name="article"
-								tabIndex="-1"
-								aria-hidden="true"
-								/* translators: edit post link text */
-								dangerouslySetInnerHTML={{
-									__html: `${__('Edit', 'fleximple-blocks-post')} «${post.title.rendered}»`,
-								}}
-							/>
 						</>
 					);
 				}

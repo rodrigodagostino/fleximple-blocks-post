@@ -76,7 +76,7 @@
 .fleximple-blocks-post__category {
 	margin-right: var(--space-025, 0.5rem);
 	position: relative;
-	z-index: 1;
+	z-index: 2;
 	text-decoration: none;
 
 	&:last-child {
@@ -87,12 +87,6 @@
 .fleximple-blocks-post__title {
 	margin: 0;
 	line-height: 1.25;
-
-	a {
-		position: relative;
-		z-index: 1;
-		text-decoration: none;
-	}
 }
 
 .fleximple-blocks-post__kicker {
@@ -107,7 +101,7 @@
 
 .fleximple-blocks-post__meta {
 	font-size: 13px;
-	z-index: 1;
+	z-index: 2;
 
 	& > * {
 		display: inline-block;
@@ -132,7 +126,7 @@
 .fleximple-blocks-post__read-more {
 	font-size: var(--text-100, 1rem);
 	display: inline-block;
-	z-index: 1;
+	z-index: 2;
 }
 
 .fleximple-blocks-post__footer {
@@ -140,6 +134,8 @@
 	flex-direction: column;
 	flex-basis: 100%;
 	margin-top: var(--space-050);
+	position: relative;
+	z-index: 2;
 
 	.fleximple-blocks-post__title {
 		font-size: var(--text-100, 1rem);
@@ -148,9 +144,10 @@
 
 .fleximple-blocks-post__link-overlay {
 	position: absolute;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	opacity: 0;
+	inset: 0;
+	z-index: 1;
+
+	&:focus-visible {
+		outline: 2px solid var(--color-primary, #5468ff);
+	}
 }

@@ -110,13 +110,10 @@ if (isset($attributes['displayTitle']) && $attributes['displayTitle']) {
 
 	$post_title = sprintf(
 		'<%s class="%s__title">
-        <a href="%s"' . (!empty($rel_attribute) ? ' rel="' . $rel_attribute . '"' : '') . ' data-link-name="article">
-          %s<span class="%s__headline">%s</span>
-        </a>
-      </%s>',
+			%s<span class="%s__headline">%s</span>
+		</%s>',
 		$tag_name,
 		$default_class_name,
-		esc_url(get_permalink($post_id)),
 		$post_kicker ? '<span class="' . $default_class_name . '__kicker">' . esc_html($post_kicker) . '</span>' : '',
 		$default_class_name,
 		esc_html($post_title),
@@ -199,6 +196,8 @@ if (isset($attributes['displayExtraArticles']) && $attributes['displayExtraArtic
 /* Block Markup */
 $post_markup = ''; // It is important to initiate it here so nothing will be overridden inside the following loop.
 
+$post_markup .= '<a class="' . $default_class_name . '__link-overlay" href="' . esc_url(get_permalink($post_id)) . '"' . (!empty($rel_attribute) ? ' rel="' . $rel_attribute . '"' : '') . ' data-link-name="article" aria-label="' . get_the_title($post_id) . '"></a>';
+
 foreach ($attributes['orderArticle'] as $article_fragment) {
 	if ('media' === $article_fragment && isset($attributes['displayMedia']) && $attributes['displayMedia']) {
 		$post_markup .= '<div class="' . $default_class_name . '__media">';
@@ -253,8 +252,6 @@ foreach ($attributes['orderArticle'] as $article_fragment) {
 		$post_markup .= '</div>';
 	}
 }
-
-$post_markup .= '<a class="' . $default_class_name . '__link-overlay" href="' . esc_url(get_permalink($post_id)) . '"' . (!empty($rel_attribute) ? ' rel="' . $rel_attribute . '"' : '') . ' data-link-name="article" tabindex="-1" aria-hidden="true">' . get_the_title($post_id) . '</a>';
 
 /* Block Classes */
 if (isset($attributes['align']) && $attributes['align']) {
