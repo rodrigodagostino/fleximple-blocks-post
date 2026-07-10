@@ -71,7 +71,7 @@ export default function PostEdit({
 	}, []);
 
 	useEffect(() => {
-		setAttributes({ blockId: clientId });
+		if (attributes.blockId !== clientId) setAttributes({ blockId: clientId });
 	}, [clientId]);
 
 	const post = useSelect(
