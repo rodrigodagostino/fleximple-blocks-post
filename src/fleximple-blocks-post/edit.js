@@ -59,6 +59,7 @@ export default function PostEdit({
 		readMore,
 	},
 	setAttributes,
+	isSelected,
 	clientId,
 }) {
 	const instanceId = useInstanceId(PostEdit);
@@ -121,7 +122,9 @@ export default function PostEdit({
 	const inspectorControls = (
 		<InspectorControls>
 			<PanelBody title={__('Main', 'fleximple-blocks-post')}>
-				<PostSelectControl {...{ attributes, setAttributes }} instanceId={instanceId} />
+				{isSelected && (
+					<PostSelectControl {...{ attributes, setAttributes }} instanceId={instanceId} />
+				)}
 				<BaseControl
 					label={__('Heading level', 'fleximple-blocks-post')}
 					id={`fleximple-blocks-post-heading-control-${instanceId}`}
