@@ -76,9 +76,13 @@ export default function PostEdit({
 	const post = useSelect(
 		(select) => {
 			if (!postType) return;
-			return select(coreStore).getEntityRecord('postType', postType, postId);
+			return select(coreStore).getEntityRecord('postType', postType, postId, {
+				context: 'view',
+				_fields:
+					'id,title,excerpt,link,date_gmt,featured_media,author,categories,comments_number,meta',
+			});
 		},
-		[postId]
+		[postId, postType]
 	);
 
 	const { media } = useSelect(
