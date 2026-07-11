@@ -29,7 +29,7 @@
 	},
 	"devDependencies": {
 		"@wordpress/eslint-plugin": "25.6.0",
-		"@wordpress/scripts": "^19.2.4",
+		"@wordpress/scripts": "^32.6.0",
 		"array-move": "4.0.0",
 		"eslint-config-prettier": "10.1.8",
 		"eslint-plugin-prettier": "5.5.6",
