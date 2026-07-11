@@ -140,7 +140,7 @@ export default function PostPreview({
 										</picture>
 									);
 								}
-								if (mediaFragment === 'audio' && displayAudio && post.audio_data.length > 0) {
+								if (mediaFragment === 'audio' && displayAudio && post.audio_data?.length > 0) {
 									return (
 										<audio
 											key={i}

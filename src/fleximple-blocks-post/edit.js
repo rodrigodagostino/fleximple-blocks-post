@@ -92,10 +92,10 @@ export default function PostEdit({
 				return { media: null };
 			}
 
-			const { getMedia } = select(coreStore);
+			const { getEntityRecord } = select(coreStore);
 
 			return {
-				media: getMedia(post.featured_media, {
+				media: getEntityRecord('postType', 'attachment', post.featured_media, {
 					context: 'view',
 				}),
 			};
