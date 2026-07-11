@@ -149,6 +149,17 @@
 			"default": "Read more"
 		}
 	},
+	"styles": [
+		{
+			"name": "standard",
+			"label": "Standard",
+			"isDefault": true
+		},
+		{
+			"name": "stacked",
+			"label": "Stacked"
+		}
+	],
 	"supports": {
 		"align": ["wide", "full"],
 		"html": false
