@@ -85,6 +85,7 @@ function PostSelectControl(
 				labelPosition="top"
 				value={postType}
 				options={parsePostTypes(postTypes)}
+				__next40pxDefaultSize
 				onChange={(value) => setAttributes({ postType: value })}
 			/>
 		</>

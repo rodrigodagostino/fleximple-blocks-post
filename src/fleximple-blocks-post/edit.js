@@ -141,9 +141,10 @@ export default function PostEdit({
 				{displayExcerpt && (
 					<RangeControl
 						label={__('Max number of words in excerpt', 'fleximple-blocks-post')}
+						value={excerptLength}
 						min={10}
 						max={100}
-						value={excerptLength}
+						__next40pxDefaultSize
 						onChange={(value) => setAttributes({ excerptLength: value })}
 					/>
 				)}
@@ -155,9 +156,10 @@ export default function PostEdit({
 				{displayExtraArticles && (
 					<RangeControl
 						label={__('Extra articles', 'fleximple-blocks-post')}
+						value={extraArticles}
 						min={1}
 						max={6}
-						value={extraArticles}
+						__next40pxDefaultSize
 						onChange={(value) => setAttributes({ extraArticles: value })}
 						required
 					/>
@@ -210,6 +212,7 @@ export default function PostEdit({
 										},
 										...getImageSizes(media),
 									]}
+									__next40pxDefaultSize
 									onChange={(value) => {
 										setResponsiveAttribute(attributes, setAttributes, 'imageSize', tab.name, value);
 									}}
@@ -228,6 +231,7 @@ export default function PostEdit({
 										{ label: '2:1', value: '2-1' },
 										{ label: '3:1', value: '3-1' },
 									]}
+									__next40pxDefaultSize
 									onChange={(value) => {
 										setResponsiveAttribute(
 											attributes,
@@ -267,6 +271,7 @@ export default function PostEdit({
 							{ label: __('High', 'fleximple-blocks-post'), value: 'high' },
 							{ label: __('Low', 'fleximple-blocks-post'), value: 'low' },
 						]}
+						__next40pxDefaultSize
 						onChange={(value) => setAttributes({ imageFetchPriority: value })}
 					/>
 				</PanelBody>
