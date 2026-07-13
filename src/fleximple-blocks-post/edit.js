@@ -80,28 +80,17 @@ export default function PostEdit({
 			return select(coreStore).getEntityRecord('postType', postType, postId, {
 				context: 'view',
 				_fields:
-					'id,title,excerpt,link,date_gmt,featured_media,author,categories,comments_number,meta',
+					'id,title,excerpt,link,date_gmt,featured_media,_embedded,author,categories,comments_number,meta',
+				_embed: 'wp:featuredmedia',
 			});
 		},
 		[postId, postType]
 	);
 
-	const { media } = useSelect(
-		(select) => {
-			if (!post || !post.featured_media || !displayFeaturedImage) {
-				return { media: null };
-			}
-
-			const { getEntityRecord } = select(coreStore);
-
-			return {
-				media: getEntityRecord('postType', 'attachment', post.featured_media, {
-					context: 'view',
-				}),
-			};
-		},
-		[post?.featured_media, displayFeaturedImage]
-	);
+	const media =
+		post && post.featured_media && displayFeaturedImage
+			? (post._embedded?.['wp:featuredmedia']?.[0] ?? null)
+			: null;
 
 	const blockProps = useBlockProps({
 		'data-post-id': postId ? postId : null,
