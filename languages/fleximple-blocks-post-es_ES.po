@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Fleximple Blocks: Post 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/fleximple-blocks-"
 "post\n"
-"POT-Creation-Date: 2026-07-10T20:05:30+00:00\n"
-"PO-Revision-Date: 2026-07-10 17:05-0300\n"
+"POT-Creation-Date: 2026-07-13T20:10:50+00:00\n"
+"PO-Revision-Date: 2026-07-13 17:11-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: es_ES\n"
@@ -84,7 +84,7 @@ msgstr "Busca una entrada…"
 #: build/fleximple-blocks-post/index.js:2
 #: build/fleximple-blocks-post/index.js:7
 #: src/fleximple-blocks-post/components/post-select-control.js:79
-#: src/fleximple-blocks-post/edit.js:294
+#: src/fleximple-blocks-post/edit.js:288
 msgid "Loading…"
 msgstr "Cargando…"
 
@@ -97,6 +97,105 @@ msgstr "No se encontraron entradas."
 #: src/fleximple-blocks-post/components/post-select-control.js:84
 msgid "Post type"
 msgstr "Tipo de entrada"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:100
+msgid "Additional content"
+msgstr "Contenido adicional"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:102
+msgid "Author"
+msgstr "Autor"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:104
+msgid "Audio"
+msgstr "Audio"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:106
+msgid "Categories"
+msgstr "Categorías"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:108
+msgid "Comments"
+msgstr "Comentarios"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:110
+msgid "Content"
+msgstr "Contenido"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:112
+msgid "Date"
+msgstr "Fecha"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:114
+msgid "Excerpt"
+msgstr "Extracto"
+
+#: build/fleximple-blocks-post/index.js:2
+#: build/fleximple-blocks-post/index.js:7
+#: src/fleximple-blocks-post/components/sortable-control.js:116
+#: src/fleximple-blocks-post/edit.js:147
+msgid "Extra articles"
+msgstr "Artículos extra"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:118
+msgid "Featured image"
+msgstr "Imagen destacada"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:120
+msgid "Heading"
+msgstr "Encabezado"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:122
+msgid "Icon"
+msgstr "Ícono"
+
+#: build/fleximple-blocks-post/index.js:2
+#: build/fleximple-blocks-post/index.js:7
+#: src/fleximple-blocks-post/components/sortable-control.js:124
+#: src/fleximple-blocks-post/edit.js:190
+msgid "Media"
+msgstr "Multimedia"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:126
+msgid "Meta"
+msgstr "Metadatos"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:128
+msgid "Quote"
+msgstr "Cita"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:130
+msgid "Read more"
+msgstr "Leer más"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:132
+msgid "Reference"
+msgstr "Referencia"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:134
+msgid "Subhead"
+msgstr "Subtítulo"
+
+#: build/fleximple-blocks-post/index.js:2
+#: src/fleximple-blocks-post/components/sortable-control.js:136
+msgid "Title"
+msgstr "Título"
 
 #: build/fleximple-blocks-post/index.js:2
 #: src/fleximple-blocks-post/components/sortable-control.js:20
@@ -181,7 +280,7 @@ msgstr "Ocultar extracto"
 #: build/fleximple-blocks-post/index.js:2
 #: build/fleximple-blocks-post/index.js:7
 #: src/fleximple-blocks-post/components/sortable-control.js:52
-#: src/fleximple-blocks-post/edit.js:151
+#: src/fleximple-blocks-post/edit.js:141
 msgid "Display extra articles"
 msgstr "Mostrar artículos extra"
 
@@ -290,138 +389,39 @@ msgstr "Mostrar título"
 msgid "Hide title"
 msgstr "Ocultar título"
 
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:100
-msgid "Additional content"
-msgstr "Contenido adicional"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:102
-msgid "Author"
-msgstr "Autor"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:104
-msgid "Audio"
-msgstr "Audio"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:106
-msgid "Categories"
-msgstr "Categorías"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:108
-msgid "Comments"
-msgstr "Comentarios"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:110
-msgid "Content"
-msgstr "Contenido"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:112
-msgid "Date"
-msgstr "Fecha"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:114
-msgid "Excerpt"
-msgstr "Extracto"
-
-#: build/fleximple-blocks-post/index.js:2
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/components/sortable-control.js:116
-#: src/fleximple-blocks-post/edit.js:157
-msgid "Extra articles"
-msgstr "Artículos extra"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:118
-msgid "Featured image"
-msgstr "Imagen destacada"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:120
-msgid "Heading"
-msgstr "Encabezado"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:122
-msgid "Icon"
-msgstr "Ícono"
-
-#: build/fleximple-blocks-post/index.js:2
-#: build/fleximple-blocks-post/index.js:7
-#: src/fleximple-blocks-post/components/sortable-control.js:124
-#: src/fleximple-blocks-post/edit.js:199
-msgid "Media"
-msgstr "Multimedia"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:126
-msgid "Meta"
-msgstr "Metadatos"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:128
-msgid "Quote"
-msgstr "Cita"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:130
-msgid "Read more"
-msgstr "Leer más"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:132
-msgid "Reference"
-msgstr "Referencia"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:134
-msgid "Subhead"
-msgstr "Subtítulo"
-
-#: build/fleximple-blocks-post/index.js:2
-#: src/fleximple-blocks-post/components/sortable-control.js:136
-msgid "Title"
-msgstr "Título"
-
 #. translators: %s: heading level e.g: "1", "2", "3"
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:124
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:113
 msgid "Main"
 msgstr "Principal"
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:129
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:118
 msgid "Heading level"
 msgstr "Nivel de encabezado"
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:143
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:132
 msgid "Max number of words in excerpt"
 msgstr "Número máximo de palabras en el extracto"
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:166
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:157
 msgid "“nofollow” attribute"
 msgstr "Atributo “nofollow”"
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:175
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:166
 msgid "Google search spider should not follow the links to this post."
 msgstr ""
 "La araña de búsqueda de Google no debe seguir los enlaces a estas "
 "publicaciones."
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:171
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:162
 msgid "Google search spider should follow the links to this post."
 msgstr ""
 "La araña de búsqueda de Google debe seguir los enlaces a estas publicaciones."
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:182
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:173
 msgid "“noreferrer” attribute"
 msgstr "Atributo “noreferrer”"
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:191
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:182
 msgid ""
 "The browser should not send an HTTP referer header if the user follows the "
 "hyperlink."
@@ -429,7 +429,7 @@ msgstr ""
 "El navegador no debe enviar un encabezado de referencia HTTP si el usuario "
 "sigue el hipervínculo."
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:187
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:178
 msgid ""
 "The browser should send an HTTP referer header if the user follows the "
 "hyperlink."
@@ -437,39 +437,39 @@ msgstr ""
 "El navegador debe enviar un encabezado de referencia HTTP si el usuario "
 "sigue el hipervínculo."
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:204
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:195
 msgid "Image size"
 msgstr "Tamaño de imagen"
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:208
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:199
 msgid "None"
 msgstr "Ninguno"
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:218
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:210
 msgid "Aspect ratio"
 msgstr "Proporciones"
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:262
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:255
 msgid "Fetch priority"
 msgstr "Prioridad de obtención"
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:266
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:259
 msgid "Auto"
 msgstr "Automática"
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:267
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:260
 msgid "High"
 msgstr "Alta"
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:268
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:261
 msgid "Low"
 msgstr "Baja"
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:274
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:268
 msgid "Display"
 msgstr "Mostrar"
 
-#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:278
+#: build/fleximple-blocks-post/index.js:7 src/fleximple-blocks-post/edit.js:272
 msgid "Read more text"
 msgstr "Texto leer más"
 
@@ -482,3 +482,13 @@ msgstr "Entrada"
 msgctxt "block description"
 msgid "Display a specific post or page."
 msgstr "Muestra una entrada o página específica."
+
+#: build/fleximple-blocks-post/block.json src/fleximple-blocks-post/block.json
+msgctxt "block style label"
+msgid "Standard"
+msgstr "Estándar"
+
+#: build/fleximple-blocks-post/block.json src/fleximple-blocks-post/block.json
+msgctxt "block style label"
+msgid "Stacked"
+msgstr "Apilado"
