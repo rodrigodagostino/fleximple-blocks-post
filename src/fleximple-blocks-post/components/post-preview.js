@@ -58,7 +58,6 @@ export default function PostPreview({
 	},
 	post,
 	media,
-	blockProps,
 }) {
 	const TagName = 'h' + headingLevel;
 
@@ -109,7 +108,7 @@ export default function PostPreview({
 	const relAttribute = `${noFollow ? 'nofollow' : ''} ${noReferrer ? 'noreferrer' : ''}`.trim();
 
 	return (
-		<article {...blockProps}>
+		<>
 			<a
 				className={`${defaultClassName}__link-overlay`}
 				href={`${fleximpleblocksPluginData.homeUrl}/wp-admin/post.php?post=${post.id}&action=edit`}
@@ -305,6 +304,6 @@ export default function PostPreview({
 				}
 			})}
 			<InlineStyles {...{ defaultClassName, attributes, isEditor: true }} />
-		</article>
+		</>
 	);
 }

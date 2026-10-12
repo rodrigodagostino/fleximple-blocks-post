@@ -295,27 +295,27 @@ export default function PostEdit({
 	);
 
 	return (
-		<>
+		<article {...blockProps}>
 			{blockControls}
 			{inspectorControls}
 			{/* eslint-disable no-nested-ternary */}
 			{!postId ? (
-				<Placeholder {...blockProps} {...{ attributes }} className={blockProps.className ?? ''}>
+				<Placeholder>
 					<p>{__('Choose a post in the block settings.', 'fleximple-blocks-post')}</p>
 				</Placeholder>
 			) : !hasResolvedPost ? (
-				<Placeholder {...blockProps} {...{ attributes }} className={blockProps.className ?? ''}>
+				<Placeholder>
 					<Spinner size="medium" />
 					<p style={{ marginInline: 'auto' }}>{__('Loading…', 'fleximple-blocks-post')}</p>
 				</Placeholder>
 			) : postError || !post ? (
-				<Placeholder {...blockProps} {...{ attributes }} className={blockProps.className ?? ''}>
+				<Placeholder>
 					<p>{__('Unable to load the selected post.', 'fleximple-blocks-post')}</p>
 					{postError?.message && <p>{postError.message}</p>}
 				</Placeholder>
 			) : (
-				<PostPreview post={post} media={media} blockProps={blockProps} {...{ attributes }} />
+				<PostPreview post={post} media={media} {...{ attributes }} />
 			)}
-		</>
+		</article>
 	);
 }

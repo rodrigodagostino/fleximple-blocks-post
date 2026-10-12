@@ -1,20 +1,7 @@
-.wp-block[data-type="fleximple-blocks/post"] {
-	// Allows for the block to be selected
-	&:not(.is-selected)::before {
-		content: "";
-		position: absolute;
-		left: 0;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		z-index: 10;
-	}
-}
-
 .fleximple-blocks-post__footer {
 	display: block !important;
 
-	& .fleximple-components-placeholder {
+	& .components-placeholder {
 		min-height: 100px;
 	}
 
