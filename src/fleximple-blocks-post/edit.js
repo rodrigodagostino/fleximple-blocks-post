@@ -25,6 +25,13 @@ import Spinner from 'fleximple-components/components/spinner';
 import { setResponsiveAttribute } from '../utils';
 import './editor.scss';
 
+const POST_QUERY = {
+	context: 'view',
+	_fields:
+		'id,title,excerpt,link,date_gmt,featured_media,_embedded,author,categories,comments_number,meta',
+	_embed: 'wp:featuredmedia',
+};
+
 function getImageSizes(media) {
 	if (!media) return;
 	const sizes = media.media_details.sizes;
@@ -74,15 +81,24 @@ export default function PostEdit({
 		if (attributes.blockId !== clientId) setAttributes({ blockId: clientId });
 	}, [clientId]);
 
-	const post = useSelect(
+	const { post, hasResolvedPost, postError } = useSelect(
 		(select) => {
-			if (!postType) return;
-			return select(coreStore).getEntityRecord('postType', postType, postId, {
-				context: 'view',
-				_fields:
-					'id,title,excerpt,link,date_gmt,featured_media,_embedded,author,categories,comments_number,meta',
-				_embed: 'wp:featuredmedia',
-			});
+			if (!postType || !postId) {
+				return {
+					post: null,
+					hasResolvedPost: true,
+					postError: null,
+				};
+			}
+
+			const core = select(coreStore);
+			const args = ['postType', postType, postId, POST_QUERY];
+
+			return {
+				post: core.getEntityRecord(...args),
+				hasResolvedPost: core.hasFinishedResolution('getEntityRecord', args),
+				postError: core.getResolutionError('getEntityRecord', args),
+			};
 		},
 		[postId, postType]
 	);
@@ -282,10 +298,20 @@ export default function PostEdit({
 		<>
 			{blockControls}
 			{inspectorControls}
-			{!post ? (
-				<Placeholder className="fleximple-components-placeholder">
+			{/* eslint-disable no-nested-ternary */}
+			{!postId ? (
+				<Placeholder {...blockProps} {...{ attributes }} className={blockProps.className ?? ''}>
+					<p>{__('Choose a post in the block settings.', 'fleximple-blocks-post')}</p>
+				</Placeholder>
+			) : !hasResolvedPost ? (
+				<Placeholder {...blockProps} {...{ attributes }} className={blockProps.className ?? ''}>
 					<Spinner size="medium" />
 					<p style={{ marginInline: 'auto' }}>{__('Loading…', 'fleximple-blocks-post')}</p>
+				</Placeholder>
+			) : postError || !post ? (
+				<Placeholder {...blockProps} {...{ attributes }} className={blockProps.className ?? ''}>
+					<p>{__('Unable to load the selected post.', 'fleximple-blocks-post')}</p>
+					{postError?.message && <p>{postError.message}</p>}
 				</Placeholder>
 			) : (
 				<PostPreview post={post} media={media} blockProps={blockProps} {...{ attributes }} />
